@@ -19,9 +19,9 @@ bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, 
 Sample call:
 ````c#
 System.Dynamic.ExpandoObject mismatchInfo;
-bool identical = CompareObject<Product>(oldObj, currentObj, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
+bool identical = CompareObject<Product>(originalObj, currentProduct, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
 
-if (identical = false)
+if (!identical)
 {
   MessageBox.Show("You have unsaved changes. Do you want to save your changes", "Confirmation", MessageBoxIcon.Warning, MessageBoxButtons.YesNoCancel);
 }
