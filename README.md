@@ -18,6 +18,11 @@ bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, 
 
 Sample call:
 ````c#
-CompareObject<Product>(productObj1, productObj2, nullEqualsEmpty:
-true, int depth = -1, dynamic mismatchInfo = null);
+System.Dynamic.ExpandoObject mismatchInfo;
+bool identical = CompareObject<Product>(oldObj, currentObj, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
+
+if (identical = false)
+{
+  MessageBox.Show("You have unsaved changes. Do you want to save your changes", "Confirmation", MessageBoxIcon.Warning, MessageBoxButtons.YesNoCancel);
+}
 ````
