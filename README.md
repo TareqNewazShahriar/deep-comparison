@@ -1,7 +1,7 @@
 # Deep Comparison of Objects
 Takes two instances of any complex type and compares values of properties, each item of collections and values inside assiciated objects deeply up to n-th level.
 
-Method definition:
+### Method definition
 ````c#
 bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null);
 ````
