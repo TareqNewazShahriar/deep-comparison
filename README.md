@@ -1,28 +1,26 @@
 # Deep Comparison of Objects
 Takes two instances of any complex type and compares deeply up to n-th level.
 
-Method definition with parameter descriptions
+Method definition:
 ````c#
-/// <summary>
-/// Deep comparison of complex objects.
-/// Returns true if same.
-/// </summary>
-/// <param name="obj1"></param>
-/// <param name="obj2"></param>
-/// <param name="nullEqualsEmpty">Whether null and empty object will be treated as equal or not. If true then those states will be treated as equal: null | empty | default | count 0 list</param>
-/// <param name="depth">How deep the compare method will go. -1 (or any negative): infinite level; 0 (zer0): only immediate, non-complex properties, >0 (any positive number): comparison will continue till the mentioned level</param>
-/// <param name="mismatchInfo">[For debugging purpose] Pass an empty ExpandoObject; information about mismatch will be included.</param>
-/// <returns></returns>
 bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null);
 ````
+
+Parameter description:
+**obj1 & obj2** (complext type): the objects that will be compared.
+**nullEqualsEmpty** (boolean): Whether null and empty values will be treated as equal or not. If true then those states will be treated as equal: null | empty | default | count 0 list.
+**depth** (int): How deep the compare method will go. -1 (or any negative): infinite level; 0 (zer0): only immediate, non-complex properties, >0 (any positive number): comparison will continue till the mentioned level.
+**mismatchInfo** (ExpandoObject): [For debugging purpose] Pass an empty ExpandoObject; information about mismatch will be included.
+
+*Returns* (boolean): Whether the values of the obj1 and obj2 are same or not.
 
 Sample call:
 ````c#
 System.Dynamic.ExpandoObject mismatchInfo;
-bool identical = CompareObject<Product>(originalObj, currentProduct, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
+bool identical = CompareObject<Product>(currentProduct, copyProduct, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
 
 if (!identical)
 {
-  MessageBox.Show("You have unsaved changes. Do you want to save your changes", "Confirmation", MessageBoxIcon.Warning, MessageBoxButtons.YesNoCancel);
+  MessageBox.Show("You have unsaved changes. Do you want to save your changes?", "Confirmation", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
 }
 ````
