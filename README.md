@@ -1,5 +1,5 @@
 # Deep Comparison of Objects
-Takes two instances of any complex type and compares values of properties, each item of collections and values inside assiciated objects deeply up to n-th level.
+This is helper method, compares two objects - property by property; checks the values; if any difference is found, it will inform it. It will traverse the object deeply up to n-th level and comprares promitive types, collections/enumrables, associated complex objects using recursion.
 
 ### Method definition
 ````c#
