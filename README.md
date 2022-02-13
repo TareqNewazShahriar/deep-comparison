@@ -9,7 +9,7 @@ This method is written to prompt the user before closing a form without saving; 
 
 ### Method definition
 ````c#
-bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null);
+bool  DeepComparison.CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null);
 ````
 
 ### Parameter description
@@ -23,7 +23,7 @@ bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, 
 ### Sample call
 ````c#
 System.Dynamic.ExpandoObject mismatchInfo;
-bool isIdentical = CompareObject<Product>(currentProduct, oldProduct, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
+bool isIdentical = DeepComparison.CompareObject<Product>(currentProduct, oldProduct, nullEqualsEmpty: true, mismatchInfo: mismatchInfo);
 
 if (!isIdentical)
 {
