@@ -9,7 +9,7 @@ This method is written to prompt the user before closing a form without saving; 
 
 ### Method definition
 ````c#
-bool  DeepComparison.CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null);
+bool CompareObject(T obj1, T obj2, bool nullEqualsEmpty = true, int depth = -1, dynamic mismatchInfo = null)
 ````
 
 ### Parameter description
