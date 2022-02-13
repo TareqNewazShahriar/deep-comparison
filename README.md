@@ -1,5 +1,8 @@
 # Deep Comparison of Objects
-This is helper method, compares two objects - property by property; checks the values; if any difference is found, it will inform it. It will traverse the object deeply up to n-th level and comprares promitive types, collections/enumrables, associated complex objects using recursion.
+This is C# method which compares two objects - property by property; checks the values; It will inform any difference is found or not. It will traverse the object deeply up to n-th level and comprares primitive types, collections/enumrables, associated complex objects using recursion.
+
+### Use case
+This method is written to prompt the user before closing a form without saving; when any change is found in the form.
 
 ### Method definition
 ````c#
