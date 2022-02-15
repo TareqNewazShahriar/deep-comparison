@@ -7,13 +7,14 @@
     <Authors>Tareq Newaz Shahriar</Authors>
     <PackageProjectUrl>https://github.com/TareqNewazShahriar/deep-comparison</PackageProjectUrl>
     <Copyright></Copyright>
-    <PackageIcon>not-equal.jpg</PackageIcon>
     <RepositoryUrl>https://github.com/TareqNewazShahriar/deep-comparison</RepositoryUrl>
-    <PackageTags>comrarer; comparison; deep comparison; find difference between values of two objects;</PackageTags>
+    <PackageTags>comparer;comparison;deep;reflection;recursion;</PackageTags>
     <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
 	<PackageLicenseExpression>(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+)</PackageLicenseExpression>
 	<Title>Deep Comparer</Title>
 	<Description>Compares two complex objects, check property by property and properties inside other objects and finds difference.</Description>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Assets\not-equal.jpg" Pack="true" PackagePath="" />
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

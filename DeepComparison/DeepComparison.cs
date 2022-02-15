@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace DeepComparison
 {
-    public static class DeepComparison
+    public static class DeepComparison<T> where T : class
     {
         /// <summary>
         /// Deep comparison of complex objects.
@@ -19,7 +19,7 @@ namespace DeepComparison
         /// <param name="excludeType">If any Type of object should be excluded from check, pass the Type</param>
         /// <param name="mismatchInfo">[For debugging purpose] Pass an empty dictionary; information about mismatch will be included in that pattern: { PropertyName: [ valueA, valueB, "{Info}" ] }.</param>
         /// <returns></returns>
-        public static bool Compare<T>(T obj1, T obj2, bool treatNullAndEmptyAsSame = true, int depth = -1, Type excludeType = null, IDictionary<string, object[]> mismatchInfo = null) where T : class
+        public static bool Compare(T obj1, T obj2, bool treatNullAndEmptyAsSame = true, int depth = -1, Type excludeType = null, IDictionary<string, object[]> mismatchInfo = null)
         {
             if (mismatchInfo == null)
                 mismatchInfo = new Dictionary<string, object[]>();
@@ -83,7 +83,9 @@ namespace DeepComparison
                     mismatchInfo.Add(propInfo.Name, new object[] { val1, val2, "Unequal" });
                     return false;
                 }
-                // Collection type property - can be complex or primitive. Carefull: 'string' also implemented IEnumerable<char>, but string properties won't get through this far.
+                // Collection type property - can be complex or primitive.
+                // Carefull: 'string' also implemented IEnumerable<char>, but
+                // string properties won't get through this far.
                 else if (propInfo.PropertyType.GetInterfaces().Any(o => o == typeof(IEnumerable)))
                 {
                     var list1 = (IEnumerable<dynamic>)val1;
