@@ -1,14 +1,12 @@
 # Deep Comparison of Objects
 
-### Careful: *This package needs debugging and upgrade*
-
 This is a .Net Nuget package to compare two objects - property by property; checks the values; It will inform any difference is found or not. It will traverse the object deeply up to n-th level and comprares primitive types, collections/enumrables, associated complex objects using recursion.
 
 Test Nuget Package: [DeepComparison](https://www.nuget.org/packages/Tns.DeepComparison/1.0.0#show-readme-container)
 
 ### Accuracy
 This comparer had been used regularly by a team of software engineers for more than a year. So many bugs are fixed in that time. After a period of time like 7/8 months, this method became stable (I hope!).
-
+ 
 ### Method definition
 ````c#
 bool CompareObject(T obj1, T obj2, bool treatNullAndEqualAsSame = true, int depth = -1, Type excludeType, dynamic mismatchInfo = null)
