@@ -1,5 +1,7 @@
 # Deep Comparison of Objects
 
+### *[deprecated]*
+
 This is a .Net Nuget package to compare two objects - property by property; checks the values; It will inform any difference is found or not. It will traverse the object deeply up to n-th level and comprares primitive types, collections/enumrables, associated complex objects using recursion.
 
 Test Nuget Package: [DeepComparison](https://www.nuget.org/packages/Tns.DeepComparison/1.0.0#show-readme-container)
