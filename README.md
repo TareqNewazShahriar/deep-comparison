@@ -11,12 +11,12 @@ This comparer had been used regularly by a team of software engineers for more t
  
 ### Method definition
 ````c#
-bool CompareObject(T obj1, T obj2, bool treatNullAndEqualAsSame = true, int depth = -1, Type excludeType, dynamic mismatchInfo = null)
+bool CompareObject(T obj1, T obj2, bool treatNullAndEmptyAsSame = true, int depth = -1, Type excludeType, dynamic mismatchInfo = null)
 ````
 
 ### Parameter description
 * **obj1 & obj2** (complex type): the objects that will be compared.
-* **treatNullAndEqualAsSame** (boolean): Whether null and empty values will be treated as equal or not. If true then those states will be treated as equal: null | empty | default | count 0 list.
+* **treatNullAndEmptyAsSame** (boolean): Whether null and empty values will be treated as equal or not. If true then those states will be treated as equal: null | empty | default | count 0 list.
 * **depth** (int): How deep the compare method will go. -1 (or any negative): infinite level; 0 (zer0): only immediate, non-complex properties, >0 (any positive number): comparison will continue till the mentioned level.
 
 * **excludeType** (Type): Pass the *Type* of the object that you want to exclude from the comparison.
